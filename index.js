@@ -13,6 +13,14 @@ app.use("/", user)
 const pegawai = require("./route/pegawai")
 app.use("/pegawai", auth, pegawai)
 
+//import route pelanggaran
+const pelanggaran = require("./route/pelanggaran")
+app.use("/pelanggaran", auth, pelanggaran)
+
+//import route siswa
+const siswa = require("./route/siswa")
+app.use("/siswa", auth, siswa)
+
 //membuat web server dengan port 2000
 app.listen(2000, () => {
     console.log("server run on port 2000")
