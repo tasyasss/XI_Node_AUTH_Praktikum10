@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // GET: /detail_pelanggaran_siswa/:id_pelanggaran_siswa --> endpoint untuk menampilkan detail pelanggaran
 app.get("/:id_pelanggaran_siswa", (req,res) => {
-    let param = { id_pelanggaran_siswa: req.params.id_pelanggaran_siswa}
+    let param = { id_pelanggaran_siswa: req.params.id_pelanggaran_siswa }
     // create sql query
-    let sql = "select * from detail_pelanggaran_siswa dps join pelanggaran p "+
-    "on p.id_pelanggaran = dps.id_pelanggaran where ?"
+    let sql = "select * from detail_pelanggaran_siswa dps join pelanggaran p "
+    + "on p.id_pelanggaran = dps.id_pelanggaran where ?"
 
     db.query(sql, param, (error, result) => {
         if (error) {
@@ -64,7 +64,7 @@ app.delete("/:id_pelanggaran_siswa/:id_pelanggaran", (req, res) => {
         if (error) {
             res.json({ message: error.message})
         } else {
-            res.json({message: "Data has been deleted"})
+            res.json({message: "Data berhasil dihapus"})
         }
     })
 })

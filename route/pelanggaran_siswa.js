@@ -79,6 +79,7 @@ app.delete("/:id_pelanggaran_siswa", (req, res) => {
     // create sql query delete detail_pelanggaran
     let sql = "delete from detail_pelanggaran_siswa where ?"
     db.query(sql, param, (error, result) => {
+        
         if (error) {
             res.json({ message: error.message})
         } else {

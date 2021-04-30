@@ -15,12 +15,17 @@ app.use("/pegawai", auth, pegawai)
 
 //import route pelanggaran
 const pelanggaran = require("./route/pelanggaran")
-app.use("/pelanggaran", auth, pelanggaran)
+app.use("/pelanggaran", auth, pelanggaran) //ada yang gapake auth
 
 //import route siswa
 const siswa = require("./route/siswa")
-app.use("/siswa", auth, siswa)
+app.use("/siswa", auth, siswa) //ada yang gapake auth
 
+//import route jurusan
+const jurusan = require("./route/jurusan")
+app.use("/jurusan", auth, jurusan) //ada yang gapake auth
+
+//bingung ini aslinya pakai apa engga
 //import route pelanggaran siswa
 //base url -> http://localhost:2000/pelanggaran_siswa
 const pelanggaran_siswa = require("./route/pelanggaran_siswa")
